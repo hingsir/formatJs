@@ -33,7 +33,7 @@
             'ss': date.getSeconds()
         }
         format = format.replace(/yyyy|MM|dd|hh|mm|ss/g, function ($) {
-            return ('0000' + o[$]).substr(-$.length);
+            return ('0000' + o[$]).substr(-$.length)
         })
         return format
     }
