@@ -1,4 +1,4 @@
 formatJs
 ========
 
-A JavaScript library for formatting works.
+A JavaScript library for some formatting works.
