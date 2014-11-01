@@ -16,14 +16,14 @@
                 return  o[type](obj)
             }
         }
-        format = format.replace(/(%[dfs%])/img, function ($1, $2) {
-            if ($2 == '%%') {
+        format = format.replace(/%[dfs%]/img, function ($) {
+            if ($ == '%%') {
                 return '%'
             }
             if (i == args.length) {
-                return $2
+                return $
             }
-            return  _parse($2)(args[i++])
+            return  _parse($)(args[i++])
         })
         return format
     }
