@@ -4,6 +4,9 @@
         var i = 0,
             args = [].slice.call(arguments).slice(1)
         var o = {
+            '%%': function(){
+                return '%%'
+            },
             '%d': parseInt,
             '%f': parseFloat,
             '%s': function (obj) {
@@ -15,7 +18,7 @@
                 return  o[type](obj)
             }
         }
-        format = format.replace(/(%[dfs])/img, function ($1, $2) {
+        format = format.replace(/(%[dfs%])/img, function ($1, $2) {
             if (i == args.length) {
                 return $2
             }
