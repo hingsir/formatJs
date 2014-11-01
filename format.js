@@ -1,12 +1,10 @@
-;(function (global, undefined) {
+;
+(function (global, undefined) {
     var format = {}
     format.printf = function (format, args) {
         var i = 0,
             args = [].slice.call(arguments).slice(1)
         var o = {
-            '%%': function(){
-                return '%%'
-            },
             '%d': parseInt,
             '%f': parseFloat,
             '%s': function (obj) {
@@ -19,6 +17,9 @@
             }
         }
         format = format.replace(/(%[dfs%])/img, function ($1, $2) {
+            if ($2 == '%%') {
+                return '%'
+            }
             if (i == args.length) {
                 return $2
             }
