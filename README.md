@@ -20,7 +20,7 @@ How to use
 ```
 ####`formatTemplate()`
 ```
-    var str = 'name : ${user.name}, home :${user.address.home},work at :${user.address.work}'
+    var tmpl = 'name : ${user.name}, home :${user.address.home},work at :${user.address.work}'
     var user = {
         id: '1000',
         name: 'hingsir',
@@ -29,5 +29,5 @@ How to use
             work: 'ZhuHai'
         }
     }
-    str = format.formatTemplate(str, user)
+    var result = format.formatTemplate(tmpl, user)
 ```
